@@ -31,3 +31,39 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Java Spring Boot
+/target/
+/*.log
+*.war
+*.jar
+*.class
+*.project
+*.classpath
+/.mvn/
+/.settings/
+/bin/
+/.idea/
+/.vscode/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Angular
+/node_modules/
+/dist/
+/out-tsc/
+/.angular/
+/coverage/
+
+# Optional npm cache and logs
+.npm
+npm-debug.log*
+
+# Environment variables
+/.env
+
+# IDE specific (optional)
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

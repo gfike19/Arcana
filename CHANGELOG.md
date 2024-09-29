@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **9/28/2024**
 1. added BasseEntity, Ability constant, updated application properties for dev use
 2. filled out CharacterClass, added Equipment and Weapon class
+
+**9/28/2024**
+1. added Angular and updated gitignore
 ***
 ## [1.0.0]
 ### Added
