@@ -23,8 +23,8 @@ public class CharacterClass extends  BaseEntity{
     (nullable = false)
     private List <String> savingThrows;
 
-    @Column
-    private List <Equipment> equip;
+//    @Column
+//    private List <Equipment> equip;
 
     public CharacterClass () {
         super();
@@ -62,11 +62,11 @@ public class CharacterClass extends  BaseEntity{
         this.savingThrows = savingThrows;
     }
 
-    public List<Equipment> getEquip() {
-        return equip;
-    }
-
-    public void setEquip(List<Equipment> equip) {
-        this.equip = equip;
-    }
+//    public List<Equipment> getEquip() {
+//        return equip;
+//    }
+//
+//    public void setEquip(List<Equipment> equip) {
+//        this.equip = equip;
+//    }
 }

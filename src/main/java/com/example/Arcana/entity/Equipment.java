@@ -2,7 +2,7 @@ package com.example.Arcana.entity;
 
 import jakarta.persistence.*;
 
-
+@MappedSuperclass
 public class Equipment extends BaseEntity{
 
     @Column
