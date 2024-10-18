@@ -2,7 +2,8 @@ package com.example.Arcana.entity;
 import java.time.LocalDateTime;
 import jakarta.persistence.*;
 
-@MappedSuperclass  // Indicates that this is a base class and its properties should be mapped to the derived entities.
+@MappedSuperclass
+// Indicates that this is a base class and its properties should be mapped to the derived entities.
 public abstract class BaseEntity {
 
     @Id
