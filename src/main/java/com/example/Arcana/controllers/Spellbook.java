@@ -3,11 +3,12 @@ package com.example.Arcana.controllers;
 import com.example.Arcana.entity.Spell;
 import com.example.Arcana.service.SpellService;
 import org.springframework.stereotype.*;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/spellbook")
 public class Spellbook {
 
@@ -24,8 +25,15 @@ public class Spellbook {
     }
 
     // Endpoint to return the list of all fetched spells
-    @GetMapping
-    public List<Spell> getAllSpells() {
-        return spellService.getAllSpells();
+    // NOT FOR WORKING WITH ANGULAR
+//    @GetMapping
+//    public List<Spell> getAllSpells() {
+//        return spellService.getAllSpells();
+//    }
+
+    public String getSpells(Model model) {
+        List<Spell> spells = spellService.getAllSpells();
+        model.addAttribute("spells", spells);
+        return "spellbook";
     }
 }
