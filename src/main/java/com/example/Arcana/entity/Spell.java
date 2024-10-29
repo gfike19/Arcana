@@ -4,9 +4,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
-public class Spell extends BaseEntity{
+public class Spell extends BaseEntity {
 
-    @Column(name="spell_name", nullable = false)
+    @Column(name = "spell_name", nullable = false)
     @JsonProperty("name")
     private String name;
 
@@ -14,31 +14,17 @@ public class Spell extends BaseEntity{
     @JsonProperty("level")
     private int level;
 
-    @Column
+    @Lob
     @JsonProperty("desc")
     private String description;
 
+    @Lob
     @JsonProperty("higher_level")
-    public void setHigherLevel(String[] higherLevel) {
-        if (higherLevel != null && higherLevel.length > 0) {
-            String dieAmountText = higherLevel[0].split(" ")[-2];
-            this.higherLvlDieAmt = Integer.parseInt(dieAmountText.split("d")[0]);
-            this.higherLvlDie = Integer.parseInt(dieAmountText.split("d")[1]);
-        } else {
-            this.higherLvlDieAmt = 0;
-            this.higherLvlDie = 0;
-        }
-    }
-
-    @Column
-    private int higherLvlDieAmt;
-
-    @Column
-    private int higherLvlDie;
+    private String higherLevel;
 
     @Column
     @JsonProperty("duration")
-    private int duration;
+    private String duration;
 
     @Column
     @JsonProperty("concentration")
@@ -49,12 +35,29 @@ public class Spell extends BaseEntity{
     private String castingTime;
 
     @Column
-    @JsonProperty("damage")
+    @JsonProperty("spell_range")
+    private String spellRange;
+
+    @Lob
+    @JsonProperty("components")
+    private String components;
+
+//    @Column
+//    @JsonProperty("material")
+//    private String material;
+
+    @Column
+    @JsonProperty("damage_type")
     private String damageType;
+
+    @Lob
+    @JsonProperty("damage_at_slot_level")
+    private String damageAtSlotLevel;
 
     @Column
     @JsonProperty("school")
     private String school;
+
     //TODO add playerClasses
     //private List<PlayerClass> classes;
     //subclasses
@@ -62,6 +65,8 @@ public class Spell extends BaseEntity{
     public Spell() {
         super();
     }
+
+    // Getter and Setter Methods
 
     public String getName() {
         return name;
@@ -87,27 +92,19 @@ public class Spell extends BaseEntity{
         this.description = description;
     }
 
-    public int getHigherLvlDieAmt() {
-        return higherLvlDieAmt;
+    public String getHigherLevel() {
+        return higherLevel;
     }
 
-    public void setHigherLvlDieAmt(int higherLvlDieAmt) {
-        this.higherLvlDieAmt = higherLvlDieAmt;
+    public void setHigherLevel(String higherLevel) {
+        this.higherLevel = higherLevel;
     }
 
-    public int getHigherLvlDie() {
-        return higherLvlDie;
-    }
-
-    public void setHigherLvlDie(int higherLvlDie) {
-        this.higherLvlDie = higherLvlDie;
-    }
-
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 
@@ -127,12 +124,44 @@ public class Spell extends BaseEntity{
         this.castingTime = castingTime;
     }
 
+    public String getSpellRange() {
+        return spellRange;
+    }
+
+    public void setRange(String range) {
+        this.spellRange = spellRange;
+    }
+
+    public String getComponents() {
+        return components;
+    }
+
+    public void setComponents(String components) {
+        this.components = components;
+    }
+
+//    public String getMaterial() {
+//        return material;
+//    }
+//
+//    public void setMaterial(String material) {
+//        this.material = material;
+//    }
+
     public String getDamageType() {
         return damageType;
     }
 
     public void setDamageType(String damageType) {
         this.damageType = damageType;
+    }
+
+    public String getDamageAtSlotLevel() {
+        return damageAtSlotLevel;
+    }
+
+    public void setDamageAtSlotLevel(String damageAtSlotLevel) {
+        this.damageAtSlotLevel = damageAtSlotLevel;
     }
 
     public String getSchool() {
