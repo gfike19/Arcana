@@ -1,5 +1,6 @@
 package com.example.Arcana.controllers;
 
+import com.example.Arcana.data.*;
 import com.example.Arcana.entity.Spell;
 import com.example.Arcana.service.SpellService;
 import org.springframework.beans.factory.annotation.*;
@@ -14,9 +15,13 @@ public class SpellbookController {
     @Autowired
     SpellService spellService;
 
+    @Autowired
+    SpellRepository spellRepository;
+
     @GetMapping
-    public String getSpellbook() {
-        return "Spellbook";
+    public List<Spell> getSpellbook() {
+        List<Spell> spells = spellRepository.findAll();
+        return spells;
     }
 
     @GetMapping("/loadAllSpells")
