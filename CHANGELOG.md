@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 ***
+
+**1/9/2025**
+### Updated
+1. configured app property files to reduce duplication and utilize internal db
+
+**1/1/2025**
+### Added
+1. Web config added to allow cross origin access.
+2. README added
 **11/2/2024**
 ### Added
 1. ability to display spells at /spellbook
@@ -25,9 +34,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 **9/28/2024**
 1. added BasseEntity, Ability constant, updated application properties for dev use
 2. filled out CharacterClass, added Equipment and Weapon class
-
-**9/28/2024**
-1. added Angular and updated gitignore
 ***
 ### Added
 ### Changed
